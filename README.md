@@ -12,7 +12,7 @@
 #### System Design:
 <img width="4575" height="2743" alt="dse-p2" src="https://github.com/user-attachments/assets/b5ed6131-f783-42fb-9953-2f4b3630cdc6" />
 
-## Phase: 3 (Single Nodes Multiple Machines)
+## Phase: 3 (Single Nodes Multiple Machines) (On going)
 
 #### Features:
 - When you start the app, the inverted index will auto-build
