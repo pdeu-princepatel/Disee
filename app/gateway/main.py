@@ -6,9 +6,9 @@ app = FastAPI(title="Search Gateway")
 
 # All node URLs
 NODES = [
-    "http://localhost:8001/search/",
-    "http://localhost:8002/search/",
-    "http://localhost:8003/search/"
+    "http://node1:8000/search",
+    "http://node2:8000/search",
+    "http://node3:8000/search",
 ]
 
 

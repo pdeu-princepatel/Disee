@@ -4,7 +4,15 @@ import re
 # Global index (in-memory)
 INVERTED_INDEX = {}
 
-STORAGE_PATH = os.getenv("STORAGE_PATH", "app/storage")
+NODE_ID = os.getenv("NODE_ID", "node1")
+
+STORAGE_MAP = {
+    "node1": "app/storage_node1",
+    "node2": "app/storage_node2",
+    "node3": "app/storage_node3",
+}
+
+STORAGE_PATH = STORAGE_MAP[NODE_ID]
 
 
 def tokenize(text: str):
