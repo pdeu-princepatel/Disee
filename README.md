@@ -1,6 +1,4 @@
-# Search Engine Project
-🟢 Status: Active
-
+# Distributed Search Engine Project
 
 ## Phase: 1 (Single Node Single Machine)
 
@@ -23,7 +21,7 @@
 
 #### To run:
 1. Fork the repository
-2. pip install -r requirements.txt
-3. uvicorn app.main:app --reload
+2. Open Docker Desktop
+3. docker-compose up --build
+4. Visit: http://localhost:8000/docs/
 
-## Thankyou
