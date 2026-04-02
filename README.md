@@ -12,6 +12,9 @@
 
 ## Phase: 3 (Single Nodes Multiple Machines) (On going)
 
+#### System Design:
+<img width="1205" height="646" alt="Screenshot 2026-04-02 105012" src="https://github.com/user-attachments/assets/e6301534-907d-4e79-bee7-03eadee51aed" />
+
 #### Features:
 - When you start the app, the inverted index will auto-build
 - Then when you search a keyword say "cloud" you will get the results
