@@ -84,7 +84,7 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 1.  **Clone/Fork the Repository**:
     ```bash
-    git clone https://github.com/pdeu-princepatel/Distributive-Search-Engine.git
+    git clone https://github.com/AnshMNSoni/Distributive-Search-Engine.git
     cd Distributive-Search-Engine
     ```
 
