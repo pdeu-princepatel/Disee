@@ -5,11 +5,11 @@
 [![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED.svg)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A high-performance, containerized, distributed search engine built with **FastAPI** and **Docker**. This project implements a scalable architecture for indexing and searching across multiple distributed storage nodes using a centralized gateway for result aggregation and deduplication.
+A high-performance, containerized, distributed search engine built with **FastAPI** and **Docker**. This project implements a scalable architecture for dynamically fetching results from external sources (Wikipedia, StackOverflow), partitioning the data into chunks, and distributing them across multiple worker nodes for parallel processing and aggregation.
 
 ## 🏗️ System Architecture
 
-The project is structured around a **Gateway-Node** pattern, where a central entry point manages communication with multiple worker nodes that handle local data storage and indexing.
+The project is structured around a **Gateway-Worker** pattern. The central Gateway fetches real-time data from external APIs (Wikipedia, StackOverflow), partitions the content, and distributes it to multiple worker nodes that process and attribute the data in parallel.
 
 ### Phase 1: Single Node (Single Machine)
 Initial implementation focused on a standalone node managing its own inverted index and search logic.
@@ -25,9 +25,10 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 ## ✨ Key Features
 
-- **Distributed Query Aggregation**: The Gateway service fans out search requests to all active nodes in parallel.
-- **Automated Inverted Indexing**: Each node builds and optimizes its local inverted index automatically upon system startup.
-- **Result Deduplication**: Intelligent post-processing at the gateway layer to ensure unique search results.
+- **Distributed Query Aggregation**: The Gateway service fans out processed data chunks to all active worker nodes in parallel.
+- **Dynamic Multi-Source Integration**: Real-time fetching from Wikipedia and StackOverflow APIs for up-to-date information.
+- **Distributed Result Processing**: Nodes act as distributed processors, enriching and attributing dynamic content chunks.
+- **Premium Minimal UI**: A Google-inspired, immersive frontend with smooth motion design, focus-aware dimming, and elegant typography.
 - **Asynchronous I/O**: Heavy use of `httpx` and `asyncio` for non-blocking concurrent node communication.
 - **Dockerized Environment**: Fully containerized setup for consistent development and deployment.
 - **FastAPI OpenAPI Integration**: Interactive API documentation available out-of-the-box.
@@ -36,10 +37,11 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 - **Language**: Python 3.9+
 - **Web Framework**: [FastAPI](https://fastapi.tiangolo.com/)
+- **Frontend**: [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/)
 - **ASGI Server**: [Uvicorn](https://www.uvicorn.org/)
 - **HTTP Client**: [HTTPX](https://www.python-httpx.org/) (for asynchronous node calls)
 - **Containerization**: [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
-- **Data Handling**: Standard Inverted Index algorithm with internal tokenization.
+- **Data Sourcing**: Wikipedia API & StackOverflow (StackExchange) API.
 
 ## 🚀 Getting Started
 
@@ -80,8 +82,9 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 - [x] Phase 1: Standalone Indexing & Search
 - [x] Phase 2: Dockerized Multi-Node Aggregation
-- [X] Phase 3: Cross-Machine Distribution 
-- [ ] Feature: Multi-word search with ranking (TF-IDF/BM25)
+- [x] Phase 3: Dynamic Wikipedia & StackOverflow Integration
+- [x] Feature: Premium Google-like UI with immersive animations
+- [x] Feature: Distributed Processing Workers
 - [ ] Feature: Dynamic Node Registration & Heartbeats
 - [ ] Feature: Fault-tolerant Querying (Handle node timeouts gracefully)
 
