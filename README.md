@@ -2,7 +2,7 @@
   <img src="https://github.com/user-attachments/assets/cbc15cd7-0fe3-4401-9c6e-4aaed4604503"  alt="Desi" style="max-width: 100%; height: auto;" />
 </div>
 
-# 🔍 Distributed Search Engine (DSE)
+# Distributed Search Engine (Disee)
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688.svg)](https://fastapi.tiangolo.com/)
@@ -11,7 +11,7 @@
 
 A high-performance, containerized, distributed search engine built with **FastAPI** and **Docker**. This project implements a scalable architecture for dynamically fetching results from external sources (Wikipedia, StackOverflow), partitioning the data into chunks, and distributing them across multiple worker nodes for parallel processing and aggregation.
 
-## 🏗️ System Architecture
+## System Architecture
 
 <img width="1536" height="1024" alt="disee-gateway-worker architecture" src="https://github.com/user-attachments/assets/d970722d-5a61-4b1f-9e17-210fb76ab853" />
 <br>
@@ -34,7 +34,7 @@ Introduction of the **Gateway Service**, which orchestrates search queries acros
 The goal of Phase 3 is to achieve full distribution across multiple physical or virtual machines, implementing more resilient discovery and load balancing.
 <img width="1205" height="646" alt="Phase 3 Architecture" src="https://github.com/user-attachments/assets/e6301534-907d-4e79-bee7-03eadee51aed" />
 
-## ✨ Key Features & Optimizations
+## Key Features & Optimizations
 
 ### 1. Dual-Stream Tokenization (Code vs. Prose)
 * **Files**: `index_services.py`
@@ -59,9 +59,9 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 * **Mechanism**: The user interface supports three query filters that map cleanly to targeted datasets:
   | Mode | External APIs | Local Index |
   | :--- | :--- | :--- |
-  | 🌐 **All** *(Default)* | Wikipedia + StackOverflow | Prose Index |
-  | 📖 **Wikipedia** | Wikipedia Only | Prose Index |
-  | 💻 **StackOverflow** | StackOverflow Only | Code Index |
+  | **All** *(Default)* | Wikipedia + StackOverflow | Prose Index |
+  | **Wikipedia** | Wikipedia Only | Prose Index |
+  | **StackOverflow** | StackOverflow Only | Code Index |
 * **Advantage**: Fine-tunes performance and output quality. Conceptual queries use Wikipedia indices, whereas technical queries target code token streams from StackOverflow.
 
 ### 4. Distributed Processing of External Results
@@ -84,7 +84,7 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Language**: Python 3.9+
 - **Web Framework**: [FastAPI](https://fastapi.tiangolo.com/)
@@ -96,7 +96,7 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -129,7 +129,7 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 ---
 
-## 📋 Current Scope & Roadmap
+##  Current Scope & Roadmap
 
 - [x] Phase 1: Standalone Indexing & Search
 - [x] Phase 2: Dockerized Multi-Node Aggregation
@@ -142,7 +142,7 @@ The goal of Phase 3 is to achieve full distribution across multiple physical or 
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request or open an issue for any bug reports or feature requests.
 
@@ -152,10 +152,10 @@ Contributions are welcome! Please feel free to submit a Pull Request or open an 
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 🟢 Active Contributors
+##  Active Contributors
 
 ![Contributors](https://contrib.rocks/image?repo=AnshMNSoni/Disee)
 
-## 📜 License
+##  License
 
 This project is licensed under the [MIT License](LICENSE).
