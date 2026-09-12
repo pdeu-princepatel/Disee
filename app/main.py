@@ -9,11 +9,17 @@ app.add_middleware(
     allow_origins=[
         "https://disee.xyz",
         "https://www.disee.xyz",
+        "https://diseeee.onrender.com",
+        "http://localhost:5173",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.get("/")
+def root():
+    return {"status": "ok", "service": "Disee Search Engine"}
+
 @app.on_event("startup")
 def startup_event():
     print("Node startup: Ready to process queries...")
